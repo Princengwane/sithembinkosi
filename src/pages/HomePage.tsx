@@ -14,7 +14,7 @@ import {
   ArrowRight,
   Phone,
 } from "lucide-react";
-import heroImg from "@/assets/hero-clinic.jpg";
+import heroImg from "@/assets/hero-clinic.jpeg";
 import aboutImg from "@/assets/about-side.png";
 
 const services = [
@@ -46,7 +46,7 @@ export function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-5">
           <div>
             
             <h1 className="mt-5 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl" style={{ color: "var(--foreground)" }}>
@@ -74,8 +74,8 @@ export function HomePage() {
           </div>
           <div className="relative">
             <div className="absolute -inset-0 -z-10 rounded-3xl blur-2xl" style={{ backgroundColor: "var(--gradient-hero)" }} />
-            <img src={heroImg} alt="Sithembinkosi Medical Centre interior" width={1536} height={1024}
-              className="aspect-[16/10] w-full rounded-2xl object-cover object-center" />
+            <img src={heroImg} alt="Sithembinkosi Medical Centre interior" width={1066} height={1600}
+              className="aspect-[1/1] w-full rounded-2xl object-cover object-center" />
           </div>
         </div>
       </section>
