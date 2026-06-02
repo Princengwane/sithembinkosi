@@ -84,7 +84,7 @@ export function ContactPage() {
               title="Hours"
               lines={[
                 "Mon – Fri: 9:00 – 18:00",
-                "Sat: 9:00 – 14:30",
+                "Sat: 9:00 – 14:00",
                 "Sun & Public Holidays: 09:00 – 14:00",
               ]}
             />

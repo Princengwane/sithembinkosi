@@ -8,6 +8,8 @@ import {
   Activity,
   FlaskConical,
   Check,
+  Scale,
+  Scissors,
 } from "lucide-react";
 
 const services = [
@@ -15,25 +17,31 @@ const services = [
     icon: Stethoscope,
     title: "General Medical Care",
     desc: "Routine consultations, preventive care and ongoing primary care for the whole family.",
-    points: ["Check-ups & screenings", "Prescriptions & referrals", "Sick notes"],
+    points: ["Check-ups & screenings", "Prescriptions & referrals", "Sick notes", "PDP / PrDP Medical Assessments"],
   },
   {
     icon: HeartPulse,
     title: "Family Planning",
     desc: "Private, judgement-free counselling on the contraceptive option that fits your lifestyle.",
-    points: ["Pills, implants & injections", "Pre-conception advice", "Confidential consultations"],
+    points: ["Pills, implants & injections", "Pre-conception advice", "Infertility assessment and counselling", "Confidential consultations"],
   },
   {
     icon: Users,
-    title: "Men's & Women's Health",
+    title: "Women's Health",
     desc: "Specialised health services tailored to the unique needs of men and women.",
-    points: ["Pap smears & PSA screening", "Hormonal advice", "STI testing & treatment"],
+    points: ["Pap smears", "Hormonal health advice", "STI testing & treatment", "Routine women's health screenings","Pregnancy care and counselling", "Termination of Pregnancy Services"],
+  },
+  {
+    icon: Users,
+    title: "Men's Health",
+    desc: "Specialised health services tailored to the unique needs of men and women.",
+    points: ["PSA screening", "Prostate health assessments", "Sexual and reproductive health consultations", "Erectile dysfunction evaluation and treatment", "Circumcision services", "STI testing and treatment", "Routine men’s health screenings"],
   },
   {
     icon: Droplets,
     title: "IV Therapy",
     desc: "Hydration, vitamin and recovery drips administered by trained professionals.",
-    points: ["Hydration drips", "Vitamin boosters", "Post-illness recovery"],
+    points: ["Skin glow drips","Hydration drips", "Vitamin boosters", "Post-illness recovery", "Detoxification drips", "Vitamin B complex (Bco) injections"],
   },
   {
     icon: Activity,
@@ -45,10 +53,22 @@ const services = [
     icon: FlaskConical,
     title: "Medical Tests",
     desc: "On-site screening for the tests that matter most for early intervention.",
-    points: ["Blood pressure & sugar", "HIV & pregnancy tests", "Cholesterol screening"],
+    points: ["Blood pressure & blood sugar testing", "HIV & pregnancy testing", "Cholesterol screening", "Blood tests", "Urine testing", "DNA testing", "X-ray referrals and imaging services"],
+  },
+  {
+    icon: Scale,
+    title: "Weight Management",
+    desc: "Personalised weight management plans to help you achieve your health goals.",
+    points: ["Nutritional counselling", "Exercise planning", "Progress monitoring", "Lifestyle advice", "Relislim support programs", "Duromine (phentermine) management", "Mounjaro / Ozempic (GLP-1 weight management support)", "Ongoing monitoring and follow-up"],
+  },
+  {
+    icon: Scissors,
+    title: "Surgical Services",
+    desc: "Comprehensive surgical care for a wide range of conditions.",
+    points: ["Lipoma removal (small fatty lump excision)", "Abscess drainage", "Ear wax removal (syringing)", "Contraceptive implant removal/insertion", "Wound care and dressing changes", "Suturing (stitches) for cuts and lacerations", "Nebulizer treatments for respiratory conditions", "Point-of-care ultrasound (POCUS)"],
   },
 ];
-
+  
 export function ServicesPage() {
   return (
     <>

@@ -7,7 +7,7 @@ import aboutImg from "@/assets/about-side.png";
 const values = [
   { icon: Heart, title: "Compassion", desc: "We treat every patient with dignity, kindness, and warmth." },
   { icon: Sparkles, title: "Excellence", desc: "We hold ourselves to the highest medical and service standards." },
-  { icon: ShieldCheck, title: "Integrity", desc: "Honest, transparent, confidential care — every visit." },
+  { icon: ShieldCheck, title: "Integrity", desc: "Honest, transparent, confidential care - every visit." },
   { icon: Lightbulb, title: "Innovation", desc: "Modern tools and methods for better outcomes." },
 ];
 

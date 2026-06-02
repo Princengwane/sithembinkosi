@@ -72,7 +72,7 @@ export function Footer() {
                 <FaTiktok className="h-5 w-5" />
               </a>
               <a
-                href="https://www.facebook.com/share/1Qeudz6BdJ/?mibextid=wwXIfr"
+                href="https://www.facebook.com/share/1EcTK22Dcu/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-primary"
