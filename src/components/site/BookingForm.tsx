@@ -21,6 +21,8 @@ const SERVICES = [
   "Medical Tests",
   "Family Planning",
   "IV Therapy",
+  "Weight Management",
+  "Surgical Services",
 ] as const;
 
 const schema = z.object({
@@ -35,7 +37,37 @@ const schema = z.object({
 
 const PHONE = "27674049079";
 
+const todaySA = new Date(
+  new Date().toLocaleString("en-US", {
+    timeZone: "Africa/Johannesburg",
+  })
+)
+  .toISOString()
+  .split("T")[0];
+
+function isValidTime(date: string, time: string) {
+  const day = new Date(date).getDay();
+
+  const [hours, minutes] = time.split(":").map(Number);
+  const totalMinutes = hours * 60 + minutes;
+
+  const start = 9 * 60; // 09:00
+
+  let end;
+
+  if (day >= 1 && day <= 5) {
+    // Monday-Friday
+    end = 18 * 60;
+  } else {
+    // Saturday & Sunday
+    end = 14 * 60;
+  }
+
+  return totalMinutes >= start && totalMinutes <= end;
+}
+
 export function BookingForm() {
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [service, setService] = useState<string>("");
@@ -48,22 +80,75 @@ export function BookingForm() {
     notes: "",
   });
 
+  async function submitToGoogleForm() {
+  const formUrl =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdtHbZbswLiqKm4E2_e6uokiWPXISaQJDwofQ5bbq6bxSxnmg/formResponse";
+
+  const formData = new FormData();
+
+  formData.append("entry.359226469", values.fullName);
+  formData.append("entry.983328730", values.phone);
+  formData.append("entry.1412980951", values.email);
+  formData.append("entry.60390784", service);
+  formData.append("entry.1066673042", values.date);
+  formData.append("entry.1527783811", values.time);
+  formData.append("entry.1138896586", values.notes || "");
+
+  await fetch(formUrl, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData,
+  });
+}
+
   function update<K extends keyof typeof values>(k: K, v: string) {
     setValues((s) => ({ ...s, [k]: v }));
   }
 
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const result = schema.safeParse({ ...values, service });
-    if (!result.success) {
-      const errs: Record<string, string> = {};
-      for (const i of result.error.issues) errs[String(i.path[0])] = i.message;
-      setErrors(errs);
-      return;
-    }
+  async function onSubmit(e: React.FormEvent) {
+  e.preventDefault();
+
+  //  VALIDATE FIRST (NO LOADING YET)
+  const result = schema.safeParse({
+    ...values,
+    service,
+  });
+
+  if (!result.success) {
+    const errs: Record<string, string> = {};
+
+    result.error.issues.forEach((issue) => {
+      errs[String(issue.path[0])] = issue.message;
+    });
+
+    setErrors(errs);
+    return;
+  }
+
+  if (!isValidTime(values.date, values.time)) {
+    setErrors({
+      time: "Selected time falls outside operating hours.",
+    });
+    return;
+  }
+
+  // prevent double submit AFTER validation
+  if (loading) return;
+
+  setLoading(true);
+
+  try {
+    await submitToGoogleForm();
+
     setErrors({});
     setSubmitted(true);
+  } catch (error) {
+    console.error(error);
+    alert("Failed to submit appointment.");
+  } finally {
+    setLoading(false);
   }
+}
 
   if (submitted) {
     const wa = `https://wa.me/${PHONE}?text=${encodeURIComponent(
@@ -160,9 +245,10 @@ export function BookingForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Preferred date" error={errors.date}>
           <Input
-            type="date"
-            value={values.date}
-            onChange={(e) => update("date", e.target.value)}
+          type="date"
+          min={todaySA}
+          value={values.date}
+          onChange={(e) => update("date", e.target.value)}
           />
         </Field>
         <Field label="Preferred time" error={errors.time}>
@@ -205,8 +291,13 @@ export function BookingForm() {
         </Field>
       )}
 
-      <Button type="submit" size="lg" className="w-full rounded-full">
-        Request Appointment
+      <Button
+      type="submit"
+      size="lg"
+      className="w-full rounded-full"
+      disabled={loading}
+      >
+        {loading ? "Submitting..." : "Request Appointment"}
       </Button>
       <p className="text-center text-xs" style={{ color: "var(--muted-foreground)" }}>
         Your information is kept confidential and used only to schedule your visit.
