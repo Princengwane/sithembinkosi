@@ -36,7 +36,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <dt className="text-xs uppercase tracking-wider" style={{ color: "var(--muted-foreground)" }}>{label}</dt>
-      <dd className="mt-1 text-2xl font-semibold" style={{ color: "var(--foreground)" }}>{value}</dd>
+      <dd className="mt-1 text-sm font-semibold" style={{ color: "var(--foreground)" }}>{value}</dd>
     </div>
   );
 }
