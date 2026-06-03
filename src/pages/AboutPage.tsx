@@ -38,7 +38,7 @@ export function AboutPage() {
             loading="lazy"
             width={1024}
             height={1024}
-            className="aspect-square w-full rounded-3xl object-cover"
+            className="aspect-[5/4] w-full rounded-2xl object-cover"
             style={{ boxShadow: "var(--shadow-soft)" }}
           />
           <div className="space-y-8">
@@ -53,6 +53,20 @@ export function AboutPage() {
               <h2 className="text-2xl font-semibold">Our Vision</h2>
               <p className="mt-3" style={{ color: "var(--muted-foreground)" }}>
                 To be a trusted medical centre recognized for excellence and community wellness.
+              </p>
+            </div>
+            <div className="mt-6 rounded-xl border p-4" style={{ borderColor: "var(--border)" }}>
+              <p
+              className="text-xs uppercase tracking-wide"
+              style={{ color: "var(--muted-foreground)" }}
+              >
+                Lead Medical Practitioner
+              </p>
+              <p className="text-lg font-semibold mt-1" style={{ color: "var(--foreground)" }}>
+                Dr NK Hlatshwayo
+              </p>
+              <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
+                MBChB (UKZN) · HPCSA PR1197118
               </p>
             </div>
           </div>

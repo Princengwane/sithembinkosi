@@ -22,12 +22,11 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm italic" style={{ color: "var(--muted-foreground)" }}>
-              In the Lord we Trust, All Things are Possible.
+              In The Lord We Trust, All Things Are Possible.
               <br />
               Practice no: 1197118
             </p>
           </div>
-
           <div>
             <h4 className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>Quick Links</h4>
             <ul className="mt-4 space-y-2 text-sm" style={{ color: "var(--muted-foreground)" }}>

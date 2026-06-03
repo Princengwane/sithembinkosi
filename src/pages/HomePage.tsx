@@ -46,7 +46,7 @@ export function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-5">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-0 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-2">
           <div>
             
             <h1 className="mt-5 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl" style={{ color: "var(--foreground)" }}>
@@ -66,10 +66,10 @@ export function HomePage() {
                 <Link to="/contact"><Phone className="mr-1.5 h-4 w-4" /> Contact Us</Link>
               </Button>
             </div>
-            <dl className="mt-10 grid grid-cols-3 gap-6 border-t pt-8" style={{ borderColor: "var(--border)" }}>
-              <Stat label="Google Rating" value="5.0 ★" />
-              <Stat label="Reviews" value="50+" />
-              <Stat label="Patients Helped" value="100+" />
+            <dl className="mt-4 grid grid-cols-3 gap-4 border-t pt-2" style={{ borderColor: "var(--border)" }}>
+              <Stat label="Qualified Care" value="Registered Clinicians" />
+              <Stat label="Availability" value="Mon–Sun" />
+              <Stat label="Patient Care" value="Confidential & Safe" />
             </dl>
           </div>
           <div className="relative">
@@ -131,7 +131,7 @@ export function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
             <img src={aboutImg} alt="Stethoscope on a surface with green plants" width={1024} height={1024} loading="lazy"
-              className="aspect-square w-full rounded-3xl object-cover" style={{ boxShadow: "var(--shadow-soft)" }} />
+              className="aspect-[5/4] w-full rounded-3xl object-cover" style={{ boxShadow: "var(--shadow-soft)" }} />
             <div className="absolute -bottom-5 -right-5 hidden rounded-2xl border px-5 py-4 sm:block"
               style={{ borderColor: "var(--border)", backgroundColor: "var(--card)", boxShadow: "var(--shadow-elevated)" }}>
               <div className="text-2xl font-semibold" style={{ color: "var(--primary)" }}>100%</div>
