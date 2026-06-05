@@ -43,7 +43,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm" style={{ color: "var(--muted-foreground)" }}>
               <li className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0" style={{ color: "var(--primary)" }} />
-                +27 067 404 9079
+                +27 67 404 9079
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0" style={{ color: "var(--primary)" }} />

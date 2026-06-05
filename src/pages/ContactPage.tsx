@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { BookingForm } from "@/components/site/BookingForm";
 
-const PHONE = "+27 067 404 9079";
+const PHONE = "+27 67 404 9079";
 const EMAIL = "sithembinkosimedical@hotmail.com";
 const ADDRESS = "24445 Baragwanath Road, Diepkloof, Zone 5, Soweto";
 
