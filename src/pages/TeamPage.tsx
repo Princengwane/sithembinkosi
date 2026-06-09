@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import drImg from "@/assets/team-doctor.jpg";
-import footImg from "@/assets/team-foot.jpg";
-import recImg from "@/assets/team-reception.jpg";
+import drImg from "@/assets/team-doctor.jpeg";
+import footImg from "@/assets/team-foot.png";
+import recImg from "@/assets/team-reception.png";
 
 const team = [
   {
@@ -12,13 +12,13 @@ const team = [
     bio: "Leading the clinical team with years of primary care experience.",
   },
   {
-    name: "Neo Matlala",
-    role: "Foot Care Specialist",
+    name: "Kelebogile Teledimo",
+    role: "Foot Care",
     img: footImg,
     bio: "Dedicated to keeping your feet healthy and pain-free.",
   },
   {
-    name: "Tshepiso Letsoalo",
+    name: "Xolani Hlatshwayo",
     role: "Receptionist",
     img: recImg,
     bio: "The first warm welcome you'll receive at our clinic.",

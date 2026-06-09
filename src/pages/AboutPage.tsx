@@ -60,7 +60,7 @@ export function AboutPage() {
               className="text-xs uppercase tracking-wide"
               style={{ color: "var(--muted-foreground)" }}
               >
-                Lead Medical Practitioner
+                Lead General Practitioner
               </p>
               <p className="text-lg font-semibold mt-1" style={{ color: "var(--foreground)" }}>
                 Dr NK Hlatshwayo

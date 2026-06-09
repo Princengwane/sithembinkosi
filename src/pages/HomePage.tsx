@@ -15,7 +15,7 @@ import {
   Phone,
 } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpeg";
-import aboutImg from "@/assets/about-side.png";
+import aboutImg from "@/assets/about-side.jpg";
 
 const services = [
   { icon: Stethoscope, title: "Medical Care", desc: "Comprehensive consultations and ongoing primary care for the whole family." },

@@ -93,9 +93,31 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-2 border-t pt-6 text-xs sm:flex-row" style={{ borderColor: "var(--border)", color: "var(--muted-foreground)" }}>
           <span>© {new Date().getFullYear()} Sithembinkosi Medical Centre. All rights reserved.</span>
-          <a href="https://ngwanexsolutions.co.za/" target="_blank" rel="noopener noreferrer">
-          Built by <strong>NgwaneXSolutions</strong>
-          </a>
+          {/* Center */}
+          <a
+          href="https://ngwanexsolutions.co.za/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium hover:text-primary transition-colors"
+          >
+            Built by <strong>NgwaneXSolutions</strong>
+            </a>
+          {/* Right */}
+          <div className="flex items-center gap-4">
+            <Link
+            to="/privacy"
+            className="hover:text-primary transition-colors"
+            >
+              Privacy Policy
+              </Link>
+              
+              <Link
+              to="/terms"
+              className="hover:text-primary transition-colors"
+              >
+                Terms of Use
+                </Link>
+          </div>
         </div>
       </div>
     </footer>

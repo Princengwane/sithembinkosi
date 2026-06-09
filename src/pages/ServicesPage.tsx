@@ -28,13 +28,13 @@ const services = [
   {
     icon: Users,
     title: "Women's Health",
-    desc: "Specialised health services tailored to the unique needs of men and women.",
+    desc: "Specialised health services tailored to the unique needs of women.",
     points: ["Pap smears", "Hormonal health advice", "STI testing & treatment", "Routine women's health screenings","Pregnancy care and counselling", "Termination of Pregnancy Services"],
   },
   {
     icon: Users,
     title: "Men's Health",
-    desc: "Specialised health services tailored to the unique needs of men and women.",
+    desc: "Specialised health services tailored to the unique needs of men.",
     points: ["PSA screening", "Prostate health assessments", "Sexual and reproductive health consultations", "Erectile dysfunction evaluation and treatment", "Circumcision services", "STI testing and treatment", "Routine men’s health screenings"],
   },
   {
