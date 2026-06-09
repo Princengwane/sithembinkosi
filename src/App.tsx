@@ -11,11 +11,13 @@ import { FaqPage } from "@/pages/FaqPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { TermsPage } from "@/pages/TermsPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
       <Navbar />
+      <ScrollToTop />
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
